@@ -31,7 +31,7 @@ router.DELETE("/foods/:id", foodHandler.DeleteFood)
 
 Basta adicionar as urls acima ao seu endereço de _localhost_
 
-#### Acessa todos os recursos, no caso, uma lista com as comidas no servidor é retornada
+#### Acessa todos os registros, no caso, uma lista com as comidas no servidor é retornada
 
 __GET:__ <http://localhost:8080/foods/all>
 
@@ -43,11 +43,10 @@ O corpo da requisição deve ser passado no sequinte formato:
 
 ```javascript
 {
-    name: "nome-da-comida"
-    category: "categoria-da-comida"
-    quantity: quantidade-da-comida
-    expiration_at: "data-no-padrão-ISO-8601"
-
+   "name": "nome-da-comida"
+   "category": "categoria-da-comida"
+   "quantity": quantidade-da-comida
+   "expiration_at": "data-no-padrão-ISO-8601"
 }
 ```
 
@@ -59,11 +58,11 @@ __Put:__ <http://localhost:8080/foods/id-da-comida>
 
 ```javascript
 {  
-"name": "Nome-da-comida",
-"category": "Categoria-da-comida",
-"quantity": quantidade-inteira,
-"price": preço-float,
-"expiration_at": "data-no-padrão-ISO-8601"
+   "name": "Nome-da-comida",
+   "category": "Categoria-da-comida",
+   "quantity": quantidade-inteira,
+   "price": preço-float,
+   "expiration_at": "data-no-padrão-ISO-8601"
 }
 ```
 
