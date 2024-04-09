@@ -5,6 +5,7 @@ import (
 	"foods/internal/repository"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -47,8 +48,9 @@ func (h *FoodHandler) GetAllFoodsByCategory(c *gin.Context){
 		c.JSON(http.StatusBadRequest, gin.H{"error":"O parâmetro 'category' é obrigatório"})
 		return
 	}
+	categoryToLower := strings.ToLower(category)
 
-	foods, err := h.repo.GetAllFoodsByCategory(c,category)
+	foods, err := h.repo.GetAllFoodsByCategory(c,categoryToLower)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError,gin.H{"error": "Erro ao buscar alimentos por categoria"})
 		return
